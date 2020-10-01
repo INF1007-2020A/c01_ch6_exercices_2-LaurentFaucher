@@ -7,7 +7,14 @@ from matplotlib.colors import cnames
 
 def list_to_dict(some_list: list) -> dict:
     # TODO: Transformer la liste en dictionnaire, les éléments de la liste deviennent les clés et leur index deviennent les valeurs
-    return {}
+    dictionaire = {}
+    for i in some_list:
+        dictionaire[i] = some_list.index(i)
+
+#for i in some_liste:
+    # some_list.index(i) -> retourne l'index =
+
+    return dictionaire
 
 
 def color_name_to_hex(colors: list) -> list:
@@ -16,28 +23,40 @@ def color_name_to_hex(colors: list) -> list:
 
 
 def odd_integer_for_loop(end: int) -> list:
-    return []
+    liste1 = []
+    for i in range(1, end, 2):
+        liste1.append(i)
+
+    return liste1
 
 
 def odd_integer_list_comprehension(end: int) -> list:
-    return []
+    liste2 = [n for n in range(1, end, 2)]
+    return liste2
 
 
 def loop_traversal(integers: list) -> None:
-    pass
+    liste2 = [n for n in range(1, 13, 2)]
+    for r in liste2:
+        print("l'element est:", r, "et son index est:", liste2.index(r))
 
 
 def word_dict_for_loop() -> dict:
-    return {}
+    dico = {}
+    for i in words:
+        dico[i.capitalize()[0]] = i
+
+    return dico
 
 
 def word_dict_comprehension() -> dict:
-    return {}
+    dico = {i.capitalize()[0]: i for i in words}
+
+    return dico
 
 
 def dictionary_traversal(words: dict) -> None:
-    pass
-
+    print(sorted(dico.items()))
 
 def main() -> None:
     some_list = ["a", "b", "z", "patate"]
