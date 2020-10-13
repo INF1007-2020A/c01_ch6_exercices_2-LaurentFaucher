@@ -11,37 +11,46 @@ def list_to_dict(some_list: list) -> dict:
     for i in some_list:
         dictionaire[i] = some_list.index(i)
 
-#for i in some_liste:
-    # some_list.index(i) -> retourne l'index =
-
     return dictionaire
 
 
 def color_name_to_hex(colors: list) -> list:
     # TODO: Trouver la valeur hex de chaque couleur dans la liste et créer une liste de tupple où le premier élément est le nom de la couleur et le deuxième est la valeur hex
-    return []
+
+    result = [((color, cnames[color])) for color in colors]
+
+    result = []
+    for color in colors:
+        result.append((color, cnames[color]))
+
+    return result
 
 
 def odd_integer_for_loop(end: int) -> list:
-    liste1 = []
-    for i in range(1, end, 2):
-        liste1.append(i)
+    odd_list = []
+    #for i in range(1, end, 2):
+        #odd_list.append(i)
 
-    return liste1
+    for i in range(1, end):
+        if i % 2 != 0:
+            odd_list.append(i)
+
+    return odd_list
 
 
 def odd_integer_list_comprehension(end: int) -> list:
-    liste2 = [n for n in range(1, end, 2)]
-    return liste2
+    #return [n for n in range(1, end, 2)]
+    return [i for i in range(1, end) if i % 2 != 0]
 
 
 def loop_traversal(integers: list) -> None:
-    liste2 = [n for n in range(1, 13, 2)]
-    for r in liste2:
-        print("l'element est:", r, "et son index est:", liste2.index(r))
+    for j in range(len(integers)):
+        index = j
+        element = integers[j]
 
+    return index, element
 
-def word_dict_for_loop() -> dict:
+def word_dict_for_loop(words) -> dict:
     dico = {}
     for i in words:
         dico[i.capitalize()[0]] = i
@@ -49,14 +58,12 @@ def word_dict_for_loop() -> dict:
     return dico
 
 
-def word_dict_comprehension() -> dict:
-    dico = {i.capitalize()[0]: i for i in words}
-
-    return dico
+def word_dict_comprehension(words) -> dict:
+    return {i.capitalize()[0] : i for i in words}
 
 
 def dictionary_traversal(words: dict) -> None:
-    print(sorted(dico.items()))
+    return {i.capitalize()[0]: i for i in sorted(words)}
 
 def main() -> None:
     some_list = ["a", "b", "z", "patate"]
